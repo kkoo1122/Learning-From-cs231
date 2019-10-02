@@ -1,6 +1,14 @@
 # Convolution Neural Network
 <img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/CNN.png" alt="drawing" width="700"/>
 
+## Summary of CNN:
+- ConvNets stack CONV,POOL,FC layers
+- Trend towards smaller filters and deeper architectures
+- Trend towards getting rid of POOL/FC layers (just CONV)
+- Historically architectures looked like **[(CONV-RELU) x N-POOL?] x M-(FC-RELU) x K,SOFTMAX**
+ where N is usually up to ~5, M is large, 0 <= K <= 2.
+  - but recent advances such as ResNet/GoogLeNet have challenged this paradigm
+
 ## Fully Connected Layer
 <img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/fully_connected_layer.png" alt="drawing" width="400"/>
 
@@ -59,5 +67,4 @@ Otherwise, it won't fit the image.
  **Common setting**:
  - F = 2, S = 2
  - F = 3, S = 2
- 
  
