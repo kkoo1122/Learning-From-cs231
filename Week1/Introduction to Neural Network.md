@@ -18,8 +18,8 @@ Source: http://cs231n.github.io/optimization-2/
 - Recap of derivative:
 <img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/Screenshot%20from%202019-10-02%2010-23-46.png" alt="drawing" width="500"/>
 
-
-## Summary
+---
+## Summary:
 - (Fully-connected) Neural Networks are stacks of linear functions and
 nonlinear activation functions; they have much more representational
 power than linear classifiers
