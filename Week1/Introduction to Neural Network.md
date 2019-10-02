@@ -5,10 +5,6 @@ Source: http://cs231n.github.io/optimization-2/
 - Backpropagation:
 <img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/Screenshot%20from%202019-10-02%2010-35-57.png" alt="drawing" width="500"/>
 
-
-- Image below is recap of derivative:
-<img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/Screenshot%20from%202019-10-02%2010-23-46.png" alt="drawing" width="500"/>
-
 - Gate pattern of graident flow:
 <img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/gateflow.png" alt="drawing" width="500"/>
 
@@ -19,4 +15,5 @@ Source: http://cs231n.github.io/optimization-2/
   3. **multiply gate**: is a little less easy to interpret. Its local gradients are the input values (except switched), and this is multiplied by the gradient on its output during the chain rule. In the example above, the gradient on x is -8.00, which is -4.00 x 2.00.
 
 
-
+- Recap of derivative:
+<img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/Screenshot%20from%202019-10-02%2010-23-46.png" alt="drawing" width="500"/>
