@@ -17,3 +17,18 @@ Source: http://cs231n.github.io/optimization-2/
 
 - Recap of derivative:
 <img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/Screenshot%20from%202019-10-02%2010-23-46.png" alt="drawing" width="500"/>
+
+
+## Summary
+- (Fully-connected) Neural Networks are stacks of linear functions and
+nonlinear activation functions; they have much more representational
+power than linear classifiers
+- backpropagation = recursive application of the chain rule along a
+computational graph to compute the gradients of all
+inputs/parameters/intermediates
+- implementations maintain a graph structure, where the nodes implement
+the forward() / backward() API
+- forward: compute result of an operation and save any intermediates
+needed for gradient computation in memory
+- backward: apply the chain rule to compute the gradient of the loss
+function with respect to the inputs
