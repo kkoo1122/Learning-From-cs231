@@ -1,10 +1,23 @@
 # Tensorflow 2.0
-## Code Memo
+## Knowledge Memo
 
 - Difference between **tf.matmul** and **tf.multiply**
   - tf.matmul: is the real matrix multiplication. Create a matrix
   - tf.multiply: means two matrices multiply each element by the same raw and column. Create a matrix. Two matrices must be **the same size**.
-  
+
+- [Difference between **epochs** and **batch size**](https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/): They are both integer values and seem to fo the same thing.
+  - **batch**: The batch size is a hyperparameter that defines the number of samples to work through before updating the internal model parameters. Think of a batch as a for-loop iterating over one or more samples and making predictions. At the end of the batch, the predictions are compared to the expected output variables and an error is calculated.From this error,the update algorithm is used to improve the model, e.g. move down along th error gradient.
+    - **A traingin dataset can be divided into one or more batches.** 
+      - **Batche Gradient Descent:** Batch Size = Size of Training Set.
+      - **Stochastic Gradient Descent:** Batch Size = 1
+      - **Mini-Batch Gradient Descent:** 1 < Batch Size < Size of Training Size
+  - **epoch**: The number of epochs is a hyperparameter that defines the number times that the learning algorithm will work through the entire training dataset. One epoch means that each sample in the training dataset has had an opportunity to update the internal model parameters. An spoch is comprised of one or more batches. For example, as above, and epoch that has one batch is called the batch gradietn descent learning algorithm.
+  - **Difference**:
+    - The batch size is a number of samples proccessed before the model is updated.
+    - The number of epchos is the number of complete passes through the training dataset.
+    - must: 1 <= batch size <= the number of samples in the training dataset.
+    - epchos must be integer but no biggest limit, could be infinity.
+    - Must to try both values multiple times to see what works best for our problems.
 
 ## TensorFlow coding example from CS231
 ### TensoFlow 2.0
