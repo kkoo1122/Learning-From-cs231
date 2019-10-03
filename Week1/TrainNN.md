@@ -60,7 +60,7 @@ W = np.random.randn(Din, Dout) * np.sqrt(2/Din)
 - Zero overhead at test-time: can be fused with conv!
 - **Behaves differently during training and testing: this is a very common source of bugs**
 
-- Other Normalizations
+### Other Normalizations
 <p align="center">
 <img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/concept_of_normalizations.png" alt="drawing" width="600"/>
 </p>
