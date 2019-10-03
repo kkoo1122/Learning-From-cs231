@@ -7,7 +7,7 @@
   
 
 ## TensorFlow coding example from CS231
-
+### TensoFlow 2.0
 ```python
 import numpy as np
 import tensorflow as tf
@@ -35,6 +35,7 @@ for t in range(50):
     #w2.assign(w2 - learning_rate * gradients[1])
 ```
 #### Code description
+##### Tensorflow Neural Net
 - Convert input numpy arrays to TF tensors. Create weights as tf.Variable
 ```python
 x = tf.convert_to_tensor(np.random.randn(N, D), np.float32)
@@ -79,6 +80,7 @@ for t in range(50):
     w1.assign(w1 - learning_rate * gradients[0])
     w2.assign(w2 - learning_rate * gradients[1])
 ```
+##### Tensorflow Optimizer
 - Can use **optimizer** to compute gradients and update weights
 ```python
 optimizer = tf.optimizers.SGD(1e-6)
@@ -90,6 +92,7 @@ for t in range(50):
   gradients = tape.gradient(loss, [w1, w2])
   optimizer.apply_gradients(zip(gradients, [w1, w2]))
 ```
+##### Tensorflow Loss
 - Use predefined common losses
 ```python
 for t in range(50):
@@ -104,5 +107,58 @@ for t in range(50):
 ### Keras: High-Level Wrapper
 - Keras is a layer on top of TensorFlow, makes common thins easy to do (Used to be third-party, now merged into TensorFlow)
 
+```python
+import numpy as np
+import tensorflow as tf
+
+N, D, H = 64, 1000, 100
 
 
+x = tf.convert_to_tensor(np.random.randn(N, D), np.float32)
+y = tf.convert_to_tensor(np.random.randn(N, D), np.float32)
+
+model = tf.keras.Sequential()
+model.add(tf.keras.layers.Dense(H, input_shape=(D, ),
+                                activation=tf.nn.relu))
+model.add(tf.keras.layers.Dense(D))
+
+optimizer =tf.optimizers.SGD(1e-1)
+
+'''
+losses = []
+for t in range(50):
+    with tf.GradientTape() as tape:
+        y_pred = model(x)
+        loss = tf.losses.MeanSquaredError()(y_pred, y)
+    gradients = tape.gradent(
+        loss, model.trainable_variables)
+
+    optimizer.apply_gradients(
+        zip(gradients, model.trainable_variables))
+'''
+#for loop above can  be write as keras code below
+model.compile(loss=tf.keras.losses.MeanSquaredError(),
+              optimizer=optimizer)
+history = model.fit(x, y, epochs=50, batch_size=N)
+```
+- Define model as a sequence of layers
+``python
+model = tf.keras.Sequential()
+model.add(tf.keras.layers.Dense(H, input_shape=(D, ),
+                                activation=tf.nn.relu))
+model.add(tf.keras.layers.Dense(D))
+```
+
+- Get oput by calling the model
+```python
+y_pred = model(x)
+```
+
+- Apply gradient to all trainable variables (weights) in the model
+```python
+gradients = tape.gradent(
+    loss, model.trainable_variables)
+
+optimizer.apply_gradients(
+    zip(gradients, model.trainable_variables))
+```
