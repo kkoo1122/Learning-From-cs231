@@ -214,6 +214,6 @@ result:
 
 ### Static vs Dynamic Graphs
  <p align="center">
-<img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/static_vs_dynamic.png" alt="drawing" width="500"/>
+<img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/static_vs_dynamic.png" alt="drawing" width="800"/>
 </p>
 
