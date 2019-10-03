@@ -142,7 +142,7 @@ model.compile(loss=tf.keras.losses.MeanSquaredError(),
 history = model.fit(x, y, epochs=50, batch_size=N)
 ```
 - Define model as a sequence of layers
-``python
+```python
 model = tf.keras.Sequential()
 model.add(tf.keras.layers.Dense(H, input_shape=(D, ),
                                 activation=tf.nn.relu))
