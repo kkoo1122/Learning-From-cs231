@@ -65,3 +65,8 @@ W = np.random.randn(Din, Dout) * np.sqrt(2/Din)
 <img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/concept_of_normalizations.png" alt="drawing" width="600"/>
 </p>
 
+## Summary
+- Activation Functions (use ReLU)
+- Data Processing (images:subtract mean)
+- Weight Initialization (use Xavier/He init)
+- Batch Normalization (use)
