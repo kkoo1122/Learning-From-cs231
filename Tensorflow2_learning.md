@@ -175,3 +175,38 @@ gradients = tape.gradent(
 optimizer.apply_gradients(
     zip(gradients, model.trainable_variables))
 ```
+
+### Compile Static Graph
+- **@tf.function**:  tf.function decorator (implicitly) complies python functions to static graph for better performance
+```python
+@tf.function
+def model_static(x, y):
+    y_pred = model(x)
+    loss = tf.losses.MeanSquaredError()(y_pred, y)
+    return y_pred, loss
+```
+- Here we compare the foward-pass time of the same model under dynamic graphic mode and static graph mode
+```python
+@tf.function
+def model_static(x, y):
+    y_pred = model(x)
+    loss = tf.losses.MeanSquaredError()(y_pred, y)
+    return y_pred, loss
+
+def model_dynamic(x, y):
+    y_pred = model(x)
+    loss = tf.losses.MeanSquaredError()(y_pred, y)
+    return y_pred, loss
+    
+print("static graph:",
+    timeit.timeit(lambda: model_static(x,y), number=10))
+
+print("dynamic graph:",
+    timeit.timeit(lambda: model_dynamic(x,y), number=10))
+
+result:
+  static graph: 0.22280063800280914
+  dynamic graph: 0.0401592589914798743
+```
+- Static graph is in general faster than dynamic graph, but the performance gain depands on the type of model / layer.
+  
