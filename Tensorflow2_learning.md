@@ -209,4 +209,11 @@ result:
   dynamic graph: 0.0401592589914798743
 ```
 - Static graph is in general faster than dynamic graph, but the performance gain depands on the type of model / layer.
-  
+
+
+
+### Static vs Dynamic Graphs
+ <p align="center">
+<img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/static_vs_dynamic.png" alt="drawing" width="200"/>
+</p>
+
