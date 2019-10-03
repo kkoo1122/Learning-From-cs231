@@ -6,7 +6,7 @@
   - tf.multiply: means two matrices multiply each element by the same raw and column. Create a matrix. Two matrices must be **the same size**.
   
 
-## TensorFlow coding example froma CS231
+## TensorFlow coding example from CS231
 
 ```python
 import numpy as np
@@ -33,7 +33,7 @@ with tf.GradientTape() as tape:
 
 ```python
  h = tf.maximum(tf.matmul(x, w1), 0)
- y_pred = tf.matmul(hm w2)
+ y_pred = tf.matmul(h, w2)
  diff = y_pred - y
  loss = tf.reduce_mean(tf.reduce_sum(diff **2, axis=1))
  ```
@@ -45,4 +45,18 @@ with tf.GradientTape() as tape:
  ```python
  gradients = tape.gradient(loss, [w1, w2])
  ```
+- **Train the network:** Run the training step over and over, use gradient to update weights
+```python
+learning_rate = 1e-6
+for t in range(50):
+    with tf.GradientTape() as tape:
+    # Use tf.GradientTape() context to build dynamic computation graph
+        h = tf.maximum(tf.matmul(x, w1), 0)
+        y_pred = tf.matmul(h, w2)
+        diff = y_pred - y
+        loss = tf.reduce_mean(tf.reduce_sum(diff **2, axis=1))
+    gradients = tape.gradient(loss, [w1, w2])
+    w1.assign(w1 - learning_rate * gradients[0])
+    w2.assign(w2 - learning_rate * gradients[1])
+```
 
