@@ -25,7 +25,7 @@ e.g. consider CIFAR-10 example with [32,32,3] images
   - Subtract the mean image (e.g. AlexNet) (mean image = [32,32,3] array)
   - Subtract per-channel mean (e.g. VGGNet) (mean along each channel = 3 numbers)
   - Subtract per-channel mean and Divide by per-channel std (e.g ResNet) (mean along each channel = 3 numbers)
-  -**Not common to do PCA or whitening**
+  - **Not common to do PCA or whitening**
   
  
   
