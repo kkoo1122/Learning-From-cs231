@@ -44,5 +44,19 @@ for Din, Dout in zip(dims[:-1], dims[1:]):
 W = np.random.randn(Din, Dout) * np.sqrt(2/Din)
 ```
 
+## Batch Normalization
+- "you want zero0mean unit-variance activation? just make them so."
+- consider a batch of activations at some layers. To make each dimension zero-mean unit-variance, apply: 
 
-  
+<p align="center">
+<img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/batch_normal_concept.png" alt="drawing" width="600"/>
+</p>
+
+- Makes deep networks **much** easier to train!
+- Improves gradient flow
+- Allows higher learning rates, faster convergence
+- Networks become more robust to initialization
+- Acts as regularization during training
+- Zero overhead at test-time: can be fused with conv!
+- **Behaves differently during training and testing: this is a very common source of bugs**
+
