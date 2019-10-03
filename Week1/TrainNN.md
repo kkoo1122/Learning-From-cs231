@@ -27,5 +27,22 @@ e.g. consider CIFAR-10 example with [32,32,3] images
   - Subtract per-channel mean and Divide by per-channel std (e.g ResNet) (mean along each channel = 3 numbers)
   - **Not common to do PCA or whitening**
   
- 
+## Weight Initialization
+- "Xavier" Initialization: ok in tanh but not ReLU.
+```python
+dims = [4096] * 7
+hs = []
+x = np.random.randn(16, dims[0])
+for Din, Dout in zip(dims[:-1], dims[1:]):
+  W = np.random.randn(Din, Dout) / np.sqrt(Din) #"Xavier initialization: std = 1/sqrt(Din)
+  x = np.tanh(x.dot(W))
+  hs.append(x)
+```
+
+-  In ReLU:
+```python
+W = np.random.randn(Din, Dout) * np.sqrt(2/Din)
+```
+
+
   
