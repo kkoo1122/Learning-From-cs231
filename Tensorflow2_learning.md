@@ -37,3 +37,12 @@ with tf.GradientTape() as tape:
  diff = y_pred - y
  loss = tf.reduce_mean(tf.reduce_sum(diff **2, axis=1))
  ```
+ - tape.gradient() uses the traced computation graph to compute gradient for the weights
+ <p align="center">
+<img src="https://github.com/kkoo1122/Learning-From-cs231/blob/master/image/TF_NN_back.png" alt="drawing" width="200"/>
+</p>
+
+ ```python
+ gradients = tape.gradient(loss, [w1, w2])
+ ```
+
