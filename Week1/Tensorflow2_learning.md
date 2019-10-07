@@ -11,7 +11,7 @@
       - **Batche Gradient Descent:** Batch Size = Size of Training Set.
       - **Stochastic Gradient Descent:** Batch Size = 1
       - **Mini-Batch Gradient Descent:** 1 < Batch Size < Size of Training Size
-  - **epoch**: The number of epochs is a hyperparameter that defines the number times that the learning algorithm will work through the entire training dataset. One epoch means that each sample in the training dataset has had an opportunity to update the internal model parameters. An spoch is comprised of one or more batches. For example, as above, and epoch that has one batch is called the batch gradietn descent learning algorithm.
+  - **epoch**: The number of epochs is a hyperparameter that defines the number times that the learning algorithm will work through the entire training dataset. One epoch means that each sample in the training dataset has had an opportunity to update the internal model parameters. An epoch is comprised of one or more batches. For example, as above, and epoch that has one batch is called the batch gradietn descent learning algorithm.
   - **Difference**:
     - The batch size is a number of samples proccessed before the model is updated.
     - The number of epchos is the number of complete passes through the training dataset.
