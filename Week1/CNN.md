@@ -56,7 +56,7 @@ Otherwise, it won't fit the image.
 ### Summary:
 - Accpets a volume of size **W_1 x H_1 X D_1**
 - Requires three hyperparameters:
-  - their spaptial extent **F**,
+  - their spatial extent **F**,
   - the stride **S**.
  - Produces a volume of size **W_2 x H_2 X D_2**
   - **W_2 = (W_1 - F + 2P)/S + 1**
