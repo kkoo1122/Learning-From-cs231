@@ -7,7 +7,7 @@
 
 - [Difference between **epochs** and **batch size**](https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/): They are both integer values and seem to do the same thing.
   - **batch**: The batch size is a hyperparameter that defines the number of samples to work through before updating the internal model parameters. Think of a batch as a for-loop iterating over one or more samples and making predictions. At the end of the batch, the predictions are compared to the expected output variables and an error is calculated.From this error,the update algorithm is used to improve the model, e.g. move down along th error gradient.
-    - **A traingin dataset can be divided into one or more batches.** 
+    - **A training dataset can be divided into one or more batches.** 
       - **Batche Gradient Descent:** Batch Size = Size of Training Set.
       - **Stochastic Gradient Descent:** Batch Size = 1
       - **Mini-Batch Gradient Descent:** 1 < Batch Size < Size of Training Size
